@@ -1,0 +1,48 @@
+{
+  "host": "localhost",
+  "port": 3030,
+  "public": "../public/",
+  "paginate": {
+    "default": 10,
+    "max": 50
+  },
+  "mongodb": "mongodb://localhost:27017/campusropeapi",
+  "authentication": {
+    "secret": "8fd30e2a8b4b3d5a8afdfd0349908aec35063d29736dde27e69ed88ba2e9b1c080c4d50e4c70f33a8460b4f15f60c116e39fd1310eb3faf3a603ce931546a0523a9c214821336ebf08bd3e15740463c01b70b1e742917bc9e04b951acee82aa0b18fc62e12db7d17a7c0d25fb1471950edc84f356c6dac4bf307c75ce76f455e1180b0635c67f2cd5c9c2f7a84eefd949fa6408bd90b17fbc2a80388380fd666e3122d08cffaf54a0db11221f845a72ffc3af43fcbfd172c5df13732335787bdf23da7ae9c5f50a6ede37315bbbbc6fe1c679d7a1656686f722547ee87975b9eff52edf3e974996473b395247a702f13d9cb355c1bfa4230445297719da5e7a0",
+    "strategies": [
+      "jwt",
+      "local"
+    ],
+    "path": "/authentication",
+    "service": "users",
+    "jwt": {
+      "header": {
+        "typ": "access"
+      },
+      "audience": "https://yourdomain.com",
+      "subject": "anonymous",
+      "issuer": "feathers",
+      "algorithm": "HS256",
+      "expiresIn": "1d"
+    },
+    "local": {
+      "entity": "user",
+      "usernameField": "email",
+      "passwordField": "password"
+    },
+    "google": {
+      "clientID": "your google client id",
+      "clientSecret": "your google client secret",
+      "successRedirect": "/",
+      "scope": [
+        "profile openid email"
+      ]
+    },
+    "cookie": {
+      "enabled": true,
+      "name": "feathers-jwt",
+      "httpOnly": false,
+      "secure": false
+    }
+  }
+}
