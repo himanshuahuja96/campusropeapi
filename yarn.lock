@@ -1800,6 +1800,11 @@ fb-watchman@^2.0.0:
   dependencies:
     bser "^2.0.0"
 
+feathers-findone@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/feathers-findone/-/feathers-findone-1.0.2.tgz#3d00ee257ac00fcaf903853e98502209756ba434"
+  integrity sha512-/7/3pglFwB4HjMGjRD53uYuwhj9EGpYHXbFywZM4atNjZ/Zc4OYRxvBy1WFW8kMuvG8hkOM1uj9es3ARhkc77A==
+
 feathers-mongoose@^6.1.4:
   version "6.2.0"
   resolved "https://registry.yarnpkg.com/feathers-mongoose/-/feathers-mongoose-6.2.0.tgz#a5d4628505640e62204b461edb6b87abf28d3a51"
