@@ -1,4 +1,5 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
+const sendConstantsData = require('./hooks/send-constants-data');
 
 module.exports = {
   before: {
@@ -12,7 +13,7 @@ module.exports = {
   },
 
   after: {
-    all: [],
+    all: [ sendConstantsData() ],
     find: [],
     get: [],
     create: [],

@@ -1,0 +1,8 @@
+const STATUSES = {
+  APPROVED: 'APPROVED',
+  REJECTED: 'REJECTED',
+  PENDING: 'PENDING'
+};
+
+
+module.exports = STATUSES;

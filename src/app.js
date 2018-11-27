@@ -20,6 +20,8 @@ const mongoose = require('./mongoose');
 
 const authentication = require('./authentication');
 
+const  { profiler }=  require('feathers-profiler');
+
 const app = express(feathers());
 
 // Load app configuration
@@ -47,6 +49,9 @@ app.configure(authentication);
 app.configure(services);
 // Set up event channels (see channels.js)
 app.configure(channels);
+
+//Log feathers service calls and gather profile information on them.
+app.configure(profiler({}));
 
 // Configure a middleware for 404s and the error handler
 app.use(express.notFound());

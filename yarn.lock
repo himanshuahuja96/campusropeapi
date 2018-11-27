@@ -1810,6 +1810,13 @@ feathers-mongoose@^6.1.4:
     lodash.omit "^4.3.0"
     uberproto "^2.0.0"
 
+feathers-profiler@^0.1.5:
+  version "0.1.5"
+  resolved "https://registry.yarnpkg.com/feathers-profiler/-/feathers-profiler-0.1.5.tgz#3a5491386ca1ec3d372e9f291f83a771890086c2"
+  integrity sha1-OlSROGyh7D03Lp8pH4OncYkAhsI=
+  dependencies:
+    debug "^2.2.0"
+
 feature-policy@0.2.0:
   version "0.2.0"
   resolved "https://registry.yarnpkg.com/feature-policy/-/feature-policy-0.2.0.tgz#22096de49ab240176878ffe2bde2f6ff04d48c43"
