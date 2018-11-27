@@ -6,9 +6,46 @@ module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const trendingNews = new Schema({
-    text: { type: String, required: true }
-  }, {
-    timestamps: true
+    headline: {
+      type: String
+    },
+    content: {
+      type: String
+    },
+    state: {
+      type: String
+    },
+    photo_urls: {
+      type: [String],
+      max: 4
+    },
+    cover_photo: {
+      type: String
+    },
+    cover_video_url: {
+      type: String
+    },
+    thumbnail_url: {
+      type: String
+    },
+    youtube_link: {
+      type: String
+    },
+    like_count: {
+      type: String
+    },
+    likes: {
+      type: [String]
+    }
+  },
+  {
+    timestamps: true,
+    toJSON: {
+      virtuals: true,
+      transform: (obj, ret) => {
+        delete ret._id;
+      }
+    }
   });
 
   return mongooseClient.model('trendingNews', trendingNews);
