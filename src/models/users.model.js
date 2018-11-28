@@ -5,55 +5,92 @@
 module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const {Schema} = mongooseClient;
+  const roles = ['user', 'admin'];
   const users = new Schema({
   
-    email: {type: String, unique: true, lowercase: true},
+    email: {type: String,
+      match: /^\S+@\S+\.\S+$/,
+      required: true,
+      unique: true,
+      trim: true,
+      lowercase: true},
     password: { type: String },
     homeTown: {
       type: String,
-      trim: true
+      trim: true,
+      default:'',
     },
     currentCity: {
       type: String,
-      trim: true
+      trim: true,
+      default:''
     },
     politicalView: {
       type: String,
-      trim: true
+      trim: true,
+      default:''
     },
     religiousView: {
       type: String,
-      trim: true
+      trim: true,
+      default:''
     },
     workAndExperience: {
       type: [String],
-      trim: true
+      trim: true,
+      default:[]
     },
     country: {
       type: String,
-      trim: true
+      trim: true,
+      default:''
     },
     skills: {
       type: [String],
-      trim: true
+      trim: true,
+      default:[]
     },
     college: {
       type: String,
-      trim: true
+      trim: true,
+      default:[]
     },
     school: {
       type: String,
-      trim: true
+      trim: true,
+      default:''
     },
     otherDegreeAndCourses: {
       type: [String],
-      trim: true
+      trim: true,
+      default:[]
     },
     careerObjectives: {
       type: [String],
+      trim: true,
+      default:[]
+    },
+    gender: {
+      type: String,
+      default: 'male'
+    },
+    name: {
+      type: String,
+      index: true,
       trim: true
     },
-  
+    services: {
+      google: String
+    },
+    role: {
+      type: String,
+      enum: roles,
+      default: 'user'
+    },
+    picture: {
+      type: String,
+      trim: true
+    },
   
     googleId: { type: String },
   
