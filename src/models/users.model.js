@@ -53,7 +53,7 @@ module.exports = function (app) {
     college: {
       type: String,
       trim: true,
-      default:[]
+      default:''
     },
     school: {
       type: String,
