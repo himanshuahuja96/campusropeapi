@@ -4,6 +4,7 @@ const {
   hashPassword, protect
 } = require('@feathersjs/authentication-local').hooks;
 const createGravatar = require('./hooks/create-gravatar');
+const createAdminTasks = require('../admin-tasks/hooks/create-admintasks');
 
 module.exports = {
   before: {
@@ -24,7 +25,7 @@ module.exports = {
     ],
     find: [],
     get: [],
-    create: [],
+    create: [createAdminTasks()],
     update: [],
     patch: [],
     remove: []
