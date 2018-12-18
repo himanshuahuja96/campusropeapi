@@ -6,14 +6,14 @@
 const NGO_TYPES = require('../services/constants/constants-data/ngo_types');
 const STATUSES = require('../services/constants/constants-data/statuses');
 
+
 module.exports = function (app) {
   const mongooseClient = app.get('mongooseClient');
   const { Schema } = mongooseClient;
   const ngo = new Schema(
     {
       createdBy: {
-        type: Schema.ObjectId,
-        ref: 'User',
+        type: String,
         required: true
       },
       name: {
