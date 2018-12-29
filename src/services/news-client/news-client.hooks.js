@@ -1,15 +1,4 @@
 const { authenticate } = require('@feathersjs/authentication').hooks;
-const { populate } = require('feathers-hooks-common');
-
-
-const newsClientSchema = {
-  include: {
-    service: 'news-client',
-    nameAs: 'newsClient',
-    parentField: 'newsClient',
-    childField: '_id'
-  }
-};
 
 module.exports = {
   before: {
@@ -24,12 +13,8 @@ module.exports = {
 
   after: {
     all: [],
-    find: [
-      populate({schema: newsClientSchema})
-    ],
-    get: [
-      populate({schema: newsClientSchema})
-    ],
+    find: [],
+    get: [],
     create: [],
     update: [],
     patch: [],

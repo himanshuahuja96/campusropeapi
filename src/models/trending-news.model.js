@@ -36,6 +36,9 @@ module.exports = function (app) {
     },
     likes: {
       type: [String]
+    },
+    newsClient:{
+      type:String
     }
   },
   {

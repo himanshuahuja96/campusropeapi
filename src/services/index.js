@@ -4,6 +4,7 @@ const trendingNews = require('./trending-news/trending-news.service.js');
 const constants = require('./constants/constants.service.js');
 const adminTasks = require('./admin-tasks/admin-tasks.service.js');
 const helpline = require('./helpline/helpline.service.js');
+const newsClient = require('./news-client/news-client.service.js');
 // eslint-disable-next-line no-unused-vars
 module.exports = function (app) {
   app.configure(users);
@@ -12,4 +13,5 @@ module.exports = function (app) {
   app.configure(constants);
   app.configure(adminTasks);
   app.configure(helpline);
+  app.configure(newsClient);
 };
