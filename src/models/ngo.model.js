@@ -47,7 +47,8 @@ module.exports = function (app) {
         type: String,
         enum: Object.values(STATUSES),
         default: STATUSES.PENDING
-      }
+      },
+      adminComments: String,
     },
     {
       timestamps: true,
