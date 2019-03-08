@@ -3,13 +3,13 @@ const sendConstantsData = require('./hooks/send-constants-data');
 
 module.exports = {
   before: {
-    all: [ authenticate('jwt') ],
+    all: [],
     find: [],
     get: [],
     create: [],
     update: [],
     patch: [],
-    remove: []
+    remove: [ authenticate('jwt') ]
   },
 
   after: {
