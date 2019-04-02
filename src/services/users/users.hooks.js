@@ -5,6 +5,7 @@ const {
 } = require('@feathersjs/authentication-local').hooks;
 const createGravatar = require('./hooks/create-gravatar');
 const createAdminTasks = require('../admin-tasks/hooks/create-admintasks');
+const setAdminTasks = require('../admin-tasks/hooks/set-admintasks');
 
 module.exports = {
   before: {
@@ -23,8 +24,8 @@ module.exports = {
       // Always must be the last hook
       protect('password')
     ],
-    find: [],
-    get: [],
+    find: [setAdminTasks()],
+    get: [setAdminTasks()],
     create: [createAdminTasks()],
     update: [],
     patch: [],
