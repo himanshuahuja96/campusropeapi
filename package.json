@@ -46,6 +46,7 @@
     "feathers-mailer": "^3.0.1",
     "feathers-mongoose": "^6.1.4",
     "feathers-profiler": "^0.1.5",
+    "feathers-seeder": "^2.0.0",
     "helmet": "^3.13.0",
     "mongodb-core": "^3.1.8",
     "mongoose": "^5.2.7",

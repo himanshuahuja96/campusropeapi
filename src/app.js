@@ -9,7 +9,8 @@ const feathers = require('@feathersjs/feathers');
 const configuration = require('@feathersjs/configuration');
 const express = require('@feathersjs/express');
 const socketio = require('@feathersjs/socketio');
-
+const seeder = require('feathers-seeder');
+const  { profiler }=  require('feathers-profiler');
 
 const middleware = require('./middleware');
 const services = require('./services');
@@ -19,8 +20,8 @@ const channels = require('./channels');
 const mongoose = require('./mongoose');
 
 const authentication = require('./authentication');
+const seedOptions = require('./seeder/development');
 
-const  { profiler }=  require('feathers-profiler');
 
 const app = express(feathers());
 
@@ -41,7 +42,8 @@ app.configure(express.rest());
 app.configure(socketio());
 
 app.configure(mongoose);
-
+// enable seeding
+app.configure(seeder(seedOptions));
 // Configure other middleware (see `middleware/index.js`)
 app.configure(middleware);
 app.configure(authentication);
@@ -58,5 +60,7 @@ app.use(express.notFound());
 app.use(express.errorHandler({ logger }));
 
 app.hooks(appHooks);
+
+//app.seed().then(()=>{});
 
 module.exports = app;
